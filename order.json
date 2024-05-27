@@ -1,0 +1,149 @@
+{
+    "producerOrderId": "bcf99384-3f94-4e23-af76-f9342fb986da",
+    "deliveryShortOrderId": null,
+    "providerOrderId": null,
+    "providerId": "ucp",
+    "channel": "mop",
+    "pickupIntent": "inStore",
+    "locationNumber": "10862",
+    "merchantId": "SBUX",
+    "timestamp": "2024-05-10T15:40:15Z",
+    "customer": {
+        "customerXID": null,
+        "displayName": "Patricia",
+        "lastInitial": "L",
+        "rewardTierNumber": null
+    },
+    "orderPreparation": "consumeOutOfStore",
+    "items": [
+        {
+            "childItems": [
+                {
+                    "skuNumber": "204198",
+                    "quantity": 1,
+                    "priceAmount": null,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": null
+                }
+            ],
+            "customInstructions": null,
+            "sumOfPricesAfterDiscounts": 495,
+            "skuNumber": "11130008",
+            "quantity": 1,
+            "priceAmount": 495,
+            "discountAmount": 0,
+            "priceAfterDiscount": 495
+        },
+        {
+            "childItems": [
+                {
+                    "skuNumber": "204198",
+                    "quantity": 1,
+                    "priceAmount": null,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": null
+                }
+            ],
+            "customInstructions": null,
+            "sumOfPricesAfterDiscounts": 495,
+            "skuNumber": "11130008",
+            "quantity": 1,
+            "priceAmount": 495,
+            "discountAmount": 0,
+            "priceAfterDiscount": 495
+        },
+        {
+            "childItems": [
+                {
+                    "skuNumber": "204198",
+                    "quantity": 1,
+                    "priceAmount": null,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": null
+                }
+            ],
+            "customInstructions": null,
+            "sumOfPricesAfterDiscounts": 495,
+            "skuNumber": "11130008",
+            "quantity": 1,
+            "priceAmount": 495,
+            "discountAmount": 0,
+            "priceAfterDiscount": 495
+        },
+        {
+            "childItems": [
+                {
+                    "skuNumber": "55",
+                    "quantity": 3,
+                    "priceAmount": 125,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": 125
+                }
+            ],
+            "customInstructions": null,
+            "sumOfPricesAfterDiscounts": 650,
+            "skuNumber": "42",
+            "quantity": 1,
+            "priceAmount": 525,
+            "discountAmount": 0,
+            "priceAfterDiscount": 525
+        },
+        {
+            "childItems": [
+                {
+                    "skuNumber": "109836",
+                    "quantity": 1,
+                    "priceAmount": 0,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": 0
+                },
+                {
+                    "skuNumber": "186842",
+                    "quantity": 1,
+                    "priceAmount": 0,
+                    "discountAmount": 0,
+                    "priceAfterDiscount": 0
+                }
+            ],
+            "customInstructions": null,
+            "sumOfPricesAfterDiscounts": 525,
+            "skuNumber": "42",
+            "quantity": 1,
+            "priceAmount": 525,
+            "discountAmount": 0,
+            "priceAfterDiscount": 525
+        }
+    ],
+    "sequencing": {
+        "travelTimeDetails": [
+            {
+                "type": "calculated",
+                "minTravelTime": 45,
+                "maxTravelTime": 45,
+                "transportMode": "car",
+                "timestamp": "2024-05-10T15:40:13.719Z"
+            }
+        ]
+    },
+    "deliveryAttempts": 0,
+    "bill": {
+        "receiptNumber": "71111296",
+        "subtotalAmount": 2660,
+        "totalTaxAmount": 213,
+        "totalAmount": 2873,
+        "taxLabels": [
+            {
+                "taxLabel": "Tax",
+                "taxAmount": 213
+            }
+        ],
+        "tenders": [
+            {
+                "tenderType": "SBUX Card",
+                "amount": 2873,
+                "currencyCode": "USD"
+            }
+        ]
+    },
+    "orderNotes": null
+}

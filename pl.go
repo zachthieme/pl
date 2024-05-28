@@ -126,30 +126,42 @@ func main() {
 
 func createLabel(index int, customer Customer, item Item, order Order, wg *sync.WaitGroup) {
 	defer wg.Done()  
-	const width = 200
-	var height = 150 + 20*len(item.ChildItems)
+	const width = 150
+	var height = 150 + 40*len(item.ChildItems)
 	dc := gg.NewContext(width, height)
 	dc.SetRGB(1, 1, 1)
 	dc.Clear()
 	dc.SetRGB(0, 0, 0)
 
-	fontFace,err := gg.LoadFontFace("FreeSans.ttf", 15)
+	fontFace,err := gg.LoadFontFace("FreeMono.ttf", 7)
   if err != nil {
 		log.Fatalf("Error loading font: %v", err)
 	}
 
   y := 30
-  dc.DrawString(fmt.Sprintf("Items in Order: %d ", len(order.Items)), 20, float64(y))
+
+  dc.DrawString(fmt.Sprintf("Item: %d of %d ", index + 1, len(order.Items)), 20, float64(y))
+  y += 20
+
+  dc.DrawString(fmt.Sprintf("Items in order: %d ", len(order.Items)), 20, float64(y))
   y += 40
 
 	// Write customer info using different font
- 	fontFace, _ = gg.LoadFontFace("DejaVuSerif.ttf", 30 )
+ 	fontFace, _ = gg.LoadFontFace("DejaVuSerif.ttf", 24 )
+  if err != nil {
+		log.Fatalf("Error loading font: %v", err)
+	}
+
 	dc.SetFontFace(fontFace)
 	dc.DrawString(fmt.Sprintf("%s %s.", customer.DisplayName, customer.LastInitial), 20, float64(y))
   y += 30
     
   // Write item info - at least what i had in the JSON
- 	fontFace, _ = gg.LoadFontFace("FreeSans.ttf", 20 )
+ 	fontFace, _ = gg.LoadFontFace("FreeSans.ttf", 12 )
+  if err != nil {
+		log.Fatalf("Error loading font: %v", err)
+	}
+
 	dc.SetFontFace(fontFace)
 	dc.DrawString(fmt.Sprintf("%s", item.SkuNumber), 20,  float64(y))
 	y += 20
@@ -159,7 +171,7 @@ func createLabel(index int, customer Customer, item Item, order Order, wg *sync.
 		dc.DrawString(fmt.Sprintf("%s", child.SkuNumber), 30, float64(y))
 		y += 20
 	}
-
+	
 	fileName := fmt.Sprintf("label_%d.png", index)
 	dc.SavePNG(fileName)
   fmt.Printf("Label saved as: %s\n ", fileName)

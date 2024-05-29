@@ -135,7 +135,7 @@ func createLabel(index int, customer Customer, item Item, order Order, wg *sync.
 	dc.Clear()
 	dc.SetRGB(0, 0, 0)
 
-	fontFace, err := gg.LoadFontFace("FreeMono.ttf", 7)
+	fontFace, err := gg.LoadFontFace("ttf/FreeMono.ttf", 7)
 	if err != nil {
 		log.Fatalf("Error loading font: %v", err)
 	}
@@ -149,7 +149,7 @@ func createLabel(index int, customer Customer, item Item, order Order, wg *sync.
 	y += 40
 
 	// Write customer info using different font
-	fontFace, _ = gg.LoadFontFace("DejaVuSerif.ttf", 24)
+	fontFace, _ = gg.LoadFontFace("ttf/DejaVuSerif.ttf", 24)
 	if err != nil {
 		log.Fatalf("Error loading font: %v", err)
 	}
@@ -159,7 +159,7 @@ func createLabel(index int, customer Customer, item Item, order Order, wg *sync.
 	y += 30
 
 	// Write item info - at least what i had in the JSON
-	fontFace, _ = gg.LoadFontFace("FreeSans.ttf", 12)
+	fontFace, _ = gg.LoadFontFace("ttf/FreeSans.ttf", 12)
 	if err != nil {
 		log.Fatalf("Error loading font: %v", err)
 	}
@@ -174,7 +174,7 @@ func createLabel(index int, customer Customer, item Item, order Order, wg *sync.
 		y += 20
 	}
 
-	fileName := fmt.Sprintf("label_%d.png", index)
+	fileName := fmt.Sprintf("labels/label_%d.png", index)
 	dc.SavePNG(fileName)
 	fmt.Printf("Label saved as: %s\n ", fileName)
 }
